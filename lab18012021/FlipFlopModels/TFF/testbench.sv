@@ -3,7 +3,7 @@
 module test_tff;
   reg T,clock,reset;
   wire Q,Qbar;
-  dff u1(Q,Qbar,T,clock,reset);
+  tff u1(Q,Qbar,T,clock,reset);
   always #5 clock=!clock;
   initial begin
     $dumpfile("dump.vcd"); $dumpvars;
