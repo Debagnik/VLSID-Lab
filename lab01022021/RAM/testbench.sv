@@ -8,15 +8,14 @@ module ram_tb;
   ram r1(dout,din,addr,clk,en,rw);
   initial begin
     $dumpfile("dump.vcd"); $dumpvars;
-    clk=0,en=1;rw=1;
+    clk=0;en=1;rw=1;
     addr=8'ha;din=8'h14;#20;
-    addr=8'hff;din=8'32;#20;
+    addr=8'hff;din=8'h32;#20;
     rw=0;
     addr=8'ha;#20;
     addr=8'hff;#20;
     addr=8'h5;#20;
-    en=0;#20
-    $finish
+    en=0;#20;
   end
   always #5 clk=!clk;
 endmodule
